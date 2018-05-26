@@ -25,7 +25,7 @@ class PageBook extends Component {
       <div styleName="pagebook">
         <ComHeader history={this.props.history}>页面集合</ComHeader>
         <ul styleName="pages">
-          {routes.map(item => (<li styleName="pages__item"><NavLink to={item.link} activeStyle={{ color: 'green', fontWeight: 'bold' }}>{item.name}</NavLink></li>))}
+          {routes.map(item => (<li styleName="pages__item" key={item.link}><NavLink to={item.link} activeStyle={{ color: 'green', fontWeight: 'bold' }}>{item.name}</NavLink></li>))}
         </ul>
       </div>
     );
