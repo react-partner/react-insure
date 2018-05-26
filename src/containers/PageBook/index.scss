@@ -1,0 +1,32 @@
+.pagebook{
+  @include font-32;
+  .pages{
+    margin-top: 80px;
+    counter-reset: li;
+    &__item{
+      margin: 20px;
+      padding: 0 30px;
+      &::before{
+        content: counter(li);
+        counter-increment: li;
+        display: inline-block;
+        width: 20Px;
+        height: 20Px;
+        margin-right: 10Px;
+        background: blueviolet;
+        color:white;
+        text-align: center;
+        border-radius: 50%;
+        line-height: 20Px;
+        font-size: 15Px;
+        transition: all 0.3s ease-out;
+        cursor: pointer;
+      }
+      &:hover{
+        &::before{
+          transform: rotate(360deg)
+        }
+      }
+    }
+  }
+}

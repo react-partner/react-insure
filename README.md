@@ -1,6 +1,6 @@
-# react-lima
+# react-insure
 
-> 开始书写华丽篇章
+> 一个专注于各种react相关技术的实战项目
 
 ## 项目架构
 
@@ -20,7 +20,7 @@
 2. 异步请求
 
 - [x] [Mock.js](http://mockjs.com/)
-- [ ] [fetch](https://github.com/github/fetch)
+- [X] [fetch](https://github.com/github/fetch)
 - [ ] [axios](https://github.com/axios/axios)
 
 ### CSS 解决方案
