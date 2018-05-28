@@ -1,0 +1,59 @@
+/* stylelint-disable */
+.forgetpwd{
+    .content{
+      margin-top: 24px;
+      background-color: $color-white;
+      padding: 0 28px;
+      .input-wrapper{
+        height: 104px;
+        display:flex;
+        align-items: center;
+        border-bottom: solid 1px $color-b05;
+        :global(.iconfont) {
+          @include font-36;
+        }
+        .text{
+          @include font-32;
+          color: $color-b04;
+          width: 176px;
+        }
+        .getcode{
+          width: 144px;
+          height: 48px;
+          color:$color-dark_red;
+          border:1px solid $color-dark_red;
+          border-radius: 45px;
+          line-height: 48px;
+          @include font-18;
+          text-align: center;
+        }
+        .input-inner{
+          flex: 1;
+          height: 100%;
+          background-color: inherit;
+          text-shadow: 0px 0px 0px $color-b04;//文字颜色
+          -webkit-text-fill-color: transparent;
+          @include font-32;
+          &:focus{
+            color:$color-red;
+          }
+        }
+      }
+      .input-wrapper:last-child{
+        border: none;
+      }
+    }
+    .btn{
+      padding: 0 28px;
+      .login-btn{
+        width: 100%;
+        height: 88px;
+        line-height: 88px;
+        margin-top: 246px;
+        border-radius: 45px;
+        background: linear-gradient(to right, $color-red , $color-dark_red);
+        color:$color-white;
+        @include font-32;
+      }
+    } 
+  }

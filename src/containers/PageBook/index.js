@@ -9,7 +9,8 @@ const routes = [
   { link: '/', name: '首页' },
   { link: '/demo', name: 'demo页' },
   { link: '/login', name: '登录' },
-  { link: '/forgetpwd', name: '忘记密码' }
+  { link: '/forgetpwd', name: '忘记密码' },
+  { link: '/changePwd', name: '修改密码' }
 ];
 
 @hot(module)

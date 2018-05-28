@@ -1,52 +1,39 @@
-.login{
-  .header{
-    height: 90px;
-    line-height: 90px;
-    background-color: $color-b01;
-    padding: 0 20px;
-    color:$color-white;
-    position: relative;
-    &__back{
-      :global(.icon-back){
-        @include font-22;
-      }
-    }
-    &__fordowa{
-      :global(.icon-more){
-        @include font-22;
-      }
-    }
-    &__title{
-      width: 100%;
-      position: absolute;
-      top:0;
-      left:0;
-      text-align: center;
-      @include font-24;
-    }
-  }
+/* stylelint-disable */
+.forgetpwd{
   .content{
-    margin-top: 20px;
+    margin-top: 24px;
     background-color: $color-white;
-    padding: 0 26px;
+    padding: 0 28px;
     .input-wrapper{
-      height: 72px;
+      height: 104px;
       display:flex;
       align-items: center;
       border-bottom: solid 1px $color-b05;
+      :global(.iconfont) {
+        @include font-36;
+      }
       .text{
-        @include font-18;
+        @include font-32;
         color: $color-b04;
-        width: 78px;
+        width: 176px;
+      }
+      .getcode{
+        width: 144px;
+        height: 48px;
+        color:$color-dark_red;
+        border:1px solid $color-dark_red;
+        border-radius: 45px;
+        line-height: 48px;
+        @include font-18;
+        text-align: center;
       }
       .input-inner{
         flex: 1;
         height: 100%;
-        margin-left: 20px;
         background-color: inherit;
         text-shadow: 0px 0px 0px $color-b04;//文字颜色
         -webkit-text-fill-color: transparent;
-        @include font-18;
+        @include font-32;
         &:focus{
           color:$color-red;
         }
@@ -57,18 +44,16 @@
     }
   }
   .btn{
-    padding: 0 26px;
+    padding: 0 28px;
     .login-btn{
       width: 100%;
-      height: 50px;
-      line-height: 50px;
-      margin-top: 100px;
-      margin-bottom: 30px;
-      border-radius: 25px;
+      height: 88px;
+      line-height: 88px;
+      margin-top: 246px;
+      border-radius: 45px;
       background: linear-gradient(to right, $color-red , $color-dark_red);
       color:$color-white;
-      @include font-20;
+      @include font-32;
     }
-  }
-
+  } 
 }
