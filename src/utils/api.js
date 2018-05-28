@@ -3,3 +3,4 @@
  */
 export const BASE_API = 'http://result.eolinker.com/yWKj3U86390d5207ac80b2bc92aed3e38d447955aba1c82?uri=';
 export const BASE_MOCK_API = 'http://mock.eolinker.com/yWKj3U86390d5207ac80b2bc92aed3e38d447955aba1c82?uri=';
+export const BASI_GETCODE = 'http://result.eolinker.com/yWKj3U86390d5207ac80b2bc92aed3e38d447955aba1c82?uri=';
