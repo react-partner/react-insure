@@ -290,7 +290,7 @@ module.exports = {
                       ],
                       flexbox: 'no-2009',
                     }),
-                    px2rem({ 
+                    px2rem({
                       rootValue: 75,
                       unitPrecision: 5,
                       propList:['*'],
