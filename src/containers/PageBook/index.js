@@ -6,11 +6,11 @@ import ComHeader from '@/components/Header';
 import styles from './index.scss';
 
 const routes = [
-  { link: '/', name: '首页' },
-  { link: '/demo', name: 'demo页' },
-  { link: '/login', name: '登录' },
-  { link: '/forgetpwd', name: '忘记密码' },
-  { link: '/changePwd', name: '修改密码' }
+  { link: '/', name: '首页', styObj: { color: `#${Math.floor(Math.random() * 16777215).toString(16)}` } },
+  { link: '/demo', name: 'demo页', styObj: { color: `#${Math.floor(Math.random() * 16777215).toString(16)}` } },
+  { link: '/login', name: '登录', styObj: { color: `#${Math.floor(Math.random() * 16777215).toString(16)}` } },
+  { link: '/forgetpwd', name: '忘记密码', styObj: { color: `#${Math.floor(Math.random() * 16777215).toString(16)}` } },
+  { link: '/changePwd', name: '修改密码', styObj: { color: `#${Math.floor(Math.random() * 16777215).toString(16)}` } }
 ];
 
 @hot(module)
@@ -18,15 +18,29 @@ const routes = [
 class PageBook extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      currentIndex: 0
+    };
   }
+  changeIndex=() => {
+    console.log(this.state.currentIndex);
+    if (this.state.currentIndex === 0) {
+      this.state = {
+        currentIndex: 1
+      };
+    } else {
+      this.state = {
+        currentIndex: 0
+      };
+    }
+  };
 
   render() {
     return (
       <div styleName="pagebook">
         <ComHeader history={this.props.history}>页面集合</ComHeader>
         <ul styleName="pages">
-          {routes.map(item => (<li styleName="pages__item" key={item.link}><NavLink to={item.link} activeStyle={{ color: 'green', fontWeight: 'bold' }}>{item.name}</NavLink></li>))}
+          {routes.map(item => (<li style={item.styObj} styleName="pages__item" key={item.link}><NavLink to={item.link} activeStyle={{ fontWeight: 'bold' }}>{item.name}</NavLink></li>))}
         </ul>
       </div>
     );

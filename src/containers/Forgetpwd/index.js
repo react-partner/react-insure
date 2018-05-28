@@ -19,7 +19,8 @@ export default class Forgetpwd extends Component {
       password: '',
       timerTitle: '获取验证码',
       timerCount: '60',
-      counting: false
+      counting: false,
+      showPwd: false
       // selfEnable: true
     };
   }
@@ -75,6 +76,16 @@ export default class Forgetpwd extends Component {
       password: e.target.value
     });
   };
+  switchPwd=() => {
+    if (!this.state.showPwd) {
+      this.newpwd.type = 'text';
+    } else {
+      this.newpwd.type = 'password';
+    }
+    this.setState({
+      showPwd: !this.state.showPwd
+    });
+  };
   sureHandler=async () => {
     if (!/^1[3456789]\d{9}$/.test(this.state.tel)) {
       return Toast.info('手机号格式不正确');
@@ -108,8 +119,8 @@ export default class Forgetpwd extends Component {
           </div>
           <div styleName="input-wrapper">
             <span styleName="text">新密码</span>
-            <input styleName="input-inner" type="password" placeholder="请输入新密码" value={this.state.password} onChange={this.pwdHandler} />
-            <span className="iconfont icon-eye_close" />
+            <input styleName="input-inner" type="password" placeholder="请输入新密码" value={this.state.password} onChange={this.pwdHandler} ref={(dom) => { this.newpwd = dom; }} />
+            {this.state.showPwd ? <span className="iconfont icon-eye_open" onClick={this.switchPwd} /> : <span className="iconfont icon-eye_close" onClick={this.switchPwd} />}
           </div>
         </div>
         <div styleName="btn">
