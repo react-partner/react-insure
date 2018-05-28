@@ -104,7 +104,7 @@ export default class Login extends Component {
           <div styleName="input-wrapper">
             <span styleName="text">验证码</span>
             <input styleName="input-inner" type="tel" placeholder="请输入验证码" value={this.state.code} onChange={this.codeHandler} maxLength="6" />
-            <span styleName="getcode" onClick={this.getCodeHandler}>{this.state.timerTitle}</span>
+            <span styleName="getcode" onClick={this.getCodeHandler} >{this.state.timerTitle}</span>
           </div>
           <div styleName="input-wrapper">
             <span styleName="text">新密码</span>

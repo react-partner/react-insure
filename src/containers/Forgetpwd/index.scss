@@ -10,18 +10,18 @@
       align-items: center;
       border-bottom: solid 1px $color-b05;
       .text{
-        @include font-18;
+        @include font-32;
         color: $color-b04;
         width: 176px;
       }
       .getcode{
-        width: 140px;
+        width: 144px;
         height: 48px;
         color:$color-dark_red;
         border:1px solid $color-dark_red;
         border-radius: 45px;
         line-height: 48px;
-        @include font-14;
+        @include font-18;
         text-align: center;
       }
       .input-inner{
@@ -30,7 +30,7 @@
         background-color: inherit;
         text-shadow: 0px 0px 0px $color-b04;//文字颜色
         -webkit-text-fill-color: transparent;
-        @include font-18;
+        @include font-32;
         &:focus{
           color:$color-red;
         }
@@ -50,7 +50,7 @@
       border-radius: 45px;
       background: linear-gradient(to right, $color-red , $color-dark_red);
       color:$color-white;
-      @include font-20;
+      @include font-32;
     }
   } 
 }
