@@ -109,6 +109,7 @@ export default class Login extends Component {
           <div styleName="input-wrapper">
             <span styleName="text">新密码</span>
             <input styleName="input-inner" type="password" placeholder="请输入新密码" value={this.state.password} onChange={this.pwdHandler} />
+            <span className="iconfont icon-eye_close" />
           </div>
         </div>
         <div styleName="btn">
