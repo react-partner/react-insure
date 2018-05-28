@@ -10,7 +10,7 @@ import styles from './index.scss';
 
 @hot(module)
 @CSSModules(styles)
-export default class Login extends Component {
+export default class Forgetpwd extends Component {
   constructor(props) {
     super(props);
     this.state = {
