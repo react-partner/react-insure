@@ -20,7 +20,8 @@ export default class Forgetpwd extends Component {
       timerTitle: '获取验证码',
       timerCount: '60',
       counting: false,
-      showPwd: false
+      showPwd: false,
+      getPwd: false
       // selfEnable: true
     };
   }
@@ -34,6 +35,9 @@ export default class Forgetpwd extends Component {
     const timertitle = this.state.timerTitle;
     const nowData = Date.now();
     const overTimeStamp = nowData + ((codeTime * 1000) + 100);
+    this.setState({
+      getPwd: !this.state.getPwd
+    });
     this.interval = setInterval(() => {
       const nowStamp = Date.now();
       if (nowStamp >= overTimeStamp) {
@@ -115,7 +119,7 @@ export default class Forgetpwd extends Component {
           <div styleName="input-wrapper">
             <span styleName="text">验证码</span>
             <input styleName="input-inner" type="tel" placeholder="请输入验证码" value={this.state.code} onChange={this.codeHandler} maxLength="6" />
-            <span styleName="getcode" onClick={this.getCodeHandler} >{this.state.timerTitle}</span>
+            {this.state.getPwd ? <span styleName="getcode2" onClick={this.getCodeHandler} >{this.state.timerTitle}</span> : <span styleName="getcode" onClick={this.getCodeHandler} >{this.state.timerTitle}</span>}
           </div>
           <div styleName="input-wrapper">
             <span styleName="text">新密码</span>

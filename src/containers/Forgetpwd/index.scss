@@ -27,6 +27,16 @@
         @include font-18;
         text-align: center;
       }
+      .getcode2{
+        width: 144px;
+        height: 48px;
+        color:$color-b03;
+        background-color:$color-b05;
+        border-radius: 45px;
+        line-height: 48px;
+        @include font-18;
+        text-align: center;
+      }
       .input-inner{
         flex: 1;
         height: 100%;
