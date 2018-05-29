@@ -1,1 +1,7 @@
 /* stylelint-disable */
+:global(.am-tab-bar){
+  height: 100vh;
+}
+:global(.am-tabs-pane-wrap){
+  overflow: hidden;
+}
