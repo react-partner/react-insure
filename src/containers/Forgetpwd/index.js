@@ -35,9 +35,6 @@ export default class Forgetpwd extends Component {
     const timertitle = this.state.timerTitle;
     const nowData = Date.now();
     const overTimeStamp = nowData + ((codeTime * 1000) + 100);
-    this.setState({
-      getPwd: !this.state.getPwd
-    });
     this.interval = setInterval(() => {
       const nowStamp = Date.now();
       if (nowStamp >= overTimeStamp) {
@@ -45,7 +42,8 @@ export default class Forgetpwd extends Component {
         this.setState({
           timerCount: codeTime,
           timerTitle: timertitle || '获取验证码',
-          counting: false
+          counting: false,
+          getPwd: false
         });
       } else {
         const leftTime = parseInt((overTimeStamp - nowStamp) / 1000, 10);
@@ -61,6 +59,7 @@ export default class Forgetpwd extends Component {
         this.setState({
           timerCount: leftTime,
           timerTitle: activeTitle,
+          getPwd: true
         });
       }
     }, 1000);
