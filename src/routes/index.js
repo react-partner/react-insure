@@ -18,7 +18,9 @@ export default class RouteConfig extends Component {
           <Route path="/" exact component={Index} />
           <Route path="/demo" component={App} />
           <Route path="/pagebook" component={PageBook} />
-
+          <Route path="/customer" component={Index} />
+          <Route path="/learn" component={Index} />
+          <Route path="/mine" component={Index} />
           <Route path="/login" component={Login} />
           <Route path="/forgetpwd" component={Forgetpwd} />
           <Route path="/changePwd" component={ChangePwd} />

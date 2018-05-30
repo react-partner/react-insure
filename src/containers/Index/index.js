@@ -7,7 +7,12 @@ import { TabBar } from 'antd-mobile';
 // import fetch from '@/utils/fetch';
 import { connect } from 'react-redux';
 import getUserData from '@/redux/user/action';
-// import ComHeader from '@/components/Header';
+import ComHeader from '@/components/Header';
+import Home from '@/containers/Home';
+import Customer from '@/containers/Customer';
+import Learn from '@/containers/Learn';
+import Mine from '@/containers/Mine';
+import { Route } from 'react-router-dom';
 import styles from './index.scss';
 
 
@@ -17,60 +22,26 @@ class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'redTab',
-      hidden: false,
-      fullScreen: false
+      title: '首页'
     };
   }
-  renderContent(pageText) {
-    return (
-      <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
-        <div style={{ paddingTop: 60 }}> Clicked {pageText} tab, show {pageText} information.</div>
-        <a
-          style={{
-display: 'block', marginTop: 40, marginBottom: 20, color: '#108ee9'
-}}
-          onClick={(e) => {
-            e.preventDefault();
-            this.setState({
-              hidden: !this.state.hidden,
-            });
-          }}
-        >
-          Click to show/hide tab-bar
-        </a>
-        <a
-          style={{ display: 'block', marginBottom: 600, color: '#108ee9' }}
-          onClick={(e) => {
-            e.preventDefault();
-            this.setState({
-              fullScreen: !this.state.fullScreen,
-            });
-          }}
-        >
-          Click to switch fullscreen
-        </a>
-      </div>
-    );
-  }
+
   render() {
     return (
-      // <div>
-      //   <ComHeader history={this.props.history}>首页</ComHeader>
-      // </div>
-      <div style={this.state.fullScreen ? {
- position: 'fixed', height: '100%', width: '100%', top: 0
-} : { height: 400 }}
+
+      <div style={{
+position: 'fixed', height: '100%', width: '100%', top: 0
+}}
       >
+        <ComHeader history={this.props.history}>{this.state.title}</ComHeader>
         <TabBar
           unselectedTintColor="#949494"
           tintColor="#33A3F4"
           barTintColor="white"
-          hidden={this.state.hidden}
         >
           <TabBar.Item
             title="首页"
-            key="首页"
+            key="home"
             icon={<div style={{
               width: '22px',
               height: '22px',
@@ -85,16 +56,17 @@ display: 'block', marginTop: 40, marginBottom: 20, color: '#108ee9'
 }}
             />
             }
-            selected={this.state.selectedTab === 'blueTab'}
+            selected={this.props.match.path === '/'}
             badge={1}
             onPress={() => {
               this.setState({
-                selectedTab: 'blueTab',
+                title: '首页'
               });
+              this.props.history.replace('/');
             }}
             data-seed="logId"
           >
-            {this.renderContent('首页')}
+            <Route path="/" exact component={Home} />
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -114,17 +86,18 @@ display: 'block', marginTop: 40, marginBottom: 20, color: '#108ee9'
               />
             }
             title="客户"
-            key="客户"
+            key="customer"
             badge="哈"
-            selected={this.state.selectedTab === 'redTab'}
+            selected={this.props.match.path === '/customer'}
             onPress={() => {
               this.setState({
-                selectedTab: 'redTab',
+                title: '客户'
               });
+              this.props.history.replace('/customer');
             }}
             data-seed="logId1"
           >
-            {this.renderContent('客户')}
+            <Route path="/customer" component={Customer} />
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -144,32 +117,35 @@ display: 'block', marginTop: 40, marginBottom: 20, color: '#108ee9'
               />
             }
             title="学习"
-            key="学习"
+            key="learn"
             dot
-            selected={this.state.selectedTab === 'greenTab'}
+            selected={this.props.match.path === '/learn'}
             onPress={() => {
               this.setState({
-                selectedTab: 'greenTab',
+                title: '学习'
               });
+              this.props.history.replace('/learn');
             }}
           >
-            {this.renderContent('学习')}
+            <Route path="/learn" component={Learn} />
           </TabBar.Item>
           <TabBar.Item
             icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
             selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
             title="我的"
-            key="我的"
-            selected={this.state.selectedTab === 'yellowTab'}
+            key="mine"
+            selected={this.props.match.path === '/mine'}
             onPress={() => {
               this.setState({
-                selectedTab: 'yellowTab',
+                title: '我的'
               });
+              this.props.history.replace('/mine');
             }}
           >
-            {this.renderContent('我的')}
+            <Route path="/mine" component={Mine} />
           </TabBar.Item>
         </TabBar>
+
       </div>
     );
   }

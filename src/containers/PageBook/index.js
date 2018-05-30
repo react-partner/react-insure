@@ -19,21 +19,9 @@ class PageBook extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentIndex: 0
+
     };
   }
-  changeIndex=() => {
-    console.log(this.state.currentIndex);
-    if (this.state.currentIndex === 0) {
-      this.state = {
-        currentIndex: 1
-      };
-    } else {
-      this.state = {
-        currentIndex: 0
-      };
-    }
-  };
 
   render() {
     return (
