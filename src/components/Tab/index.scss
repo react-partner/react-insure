@@ -1,0 +1,26 @@
+/* stylelint-disable */
+.tab{
+  font-size: 28px;
+  &__title{
+    height: 80px;
+    line-height: 80px;
+    display: flex;
+    :global(.title__item){
+      background-color: green;
+      flex:1;
+      &--active{
+        background-color: blue;
+        color:#fff;
+      }
+    }
+  }
+  :global(&__content){
+    font-weight: bold;
+    display: none;
+    margin-top: 100px;
+    @include font-36;
+    &--show{
+      display: block;
+    }
+  }
+}
