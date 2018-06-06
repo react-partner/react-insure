@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import CSSModules from 'react-css-modules';
 import ComHeader from '@/components/Header';
+import { Carousel, WingBlank } from 'antd-mobile';
+import { is, fromJS } from 'immutable';
 import styles from './index.scss';
 
 const routes = [
@@ -19,10 +21,13 @@ class PageBook extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      // data: ['1', '2', '3'],
+      imgHeight: 176,
     };
   }
-
+  shouldComponentUpdate(nextProps, nextState) {
+    return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state), fromJS(nextState));
+  }
   render() {
     return (
       <div styleName="pagebook">
@@ -30,6 +35,31 @@ class PageBook extends Component {
         <ul styleName="pages">
           {routes.map(item => (<li style={item.styObj} styleName="pages__item" key={item.link}><NavLink to={item.link} activeStyle={{ fontWeight: 'bold' }}>{item.name}</NavLink></li>))}
         </ul>
+        <WingBlank>
+          <Carousel
+            autoplay={false}
+            infinite
+          >
+            {['1', '2', '3'].map(val => (
+              <a
+                key={val}
+                href="http://www.alipay.com"
+                style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+              >
+                <img
+                  src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
+                  alt=""
+                  style={{ width: '100%', verticalAlign: 'top' }}
+                  onLoad={() => {
+                  // fire window resize event to change height
+                  // window.dispatchEvent(new Event('resize'));
+                  // this.setState({ imgHeight: 'auto' });
+                }}
+                />
+              </a>
+          ))}
+          </Carousel>
+        </WingBlank>
       </div>
     );
   }
