@@ -3,6 +3,79 @@
   background-color: $color-light_grey;
   height: 100%;
   text-align: center;
-  padding-top: 500px;
   @include font-36;
+  color: $color-b04;
+  .conent{
+    padding: 0 28px 0 38px;
+    margin: 18px 0;
+    background: $color-white;
+    :global(.bor-b){
+      border-bottom: solid 1px $color-b05;
+    }
+    :global(.mine-list){
+      height: 108px;
+      display: flex;
+      align-items: center;
+      :global(.iconfont) {
+        @include font-36;
+      }
+      .list-content{
+        flex: 1;
+        height: 100%;
+        align-self: flex-start;
+        display: flex;
+        line-height: 108px;
+        margin-left: 16px;
+      }
+    }
+  }
+  .userInfo{
+    padding: 0 28px 0 38px;
+    background: $color-white;
+    :global(.iconfont) {
+      @include font-36;
+    }
+    :global(.icon-qrcode){
+      @include font-46;
+      margin-right: 26px;
+    }
+    .head{
+      height: 177px;
+      display: flex;
+      align-items: center;
+      &__img{
+        width: 120px;
+        height: 120px;
+        border: 6px solid $color-light_grey;
+        border-radius: 50%;
+        margin-right: 11px;
+      }
+      &_content{
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        :global(.icon-probate){
+          color: $color-b06;
+          margin-left: 8px;
+          @include font-32;
+        }
+        h2{
+          flex: 1;
+          @include font-40;
+          color: $color-black;
+        }
+        div{
+          flex: 1;
+          @include font-28;
+        }
+        .probate{
+          background: $color-b06;
+          color: $color-white;
+          font-style: normal;
+          @include font-18;
+        }
+      }
+    }
+  }
 }
