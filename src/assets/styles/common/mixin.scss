@@ -3,6 +3,13 @@
 @mixin font-b {
   font-weight: bold;
 }
+@mixin font-46 {
+  font-size: 46px;
+}
+
+@mixin font-40 {
+  font-size: 40px;
+}
 
 @mixin font-36 {
   font-size: 36px;
